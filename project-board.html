@@ -121,7 +121,7 @@
 					<li class="project-board__list-item">
 						<h3 class="project__number">1</h3>
 						<p>Create a random GIF generator</p>
-						<button type="button" class="upvote" onclick="upvoteProject()">
+						<button type="button" id="project-1" class="upvote" onclick="upvoteProject(this)">
 							<span class="upvote__text">Upvote</span>
 							<svg class="icon-checkbox" width="30" height="30" viewBox="0 0 159 159" xmlns="http://www.w3.org/2000/svg"><g transform="translate(1 1)" stroke="black" stroke-width="15" fill="none" fill-rule="evenodd"><path class="check" d="M39 91l23 24 56-73"/></g></svg>
 						</button>
@@ -129,7 +129,7 @@
 					<li class="project-board__list-item">
 						<h3 class="project__number">2</h3>
 						<p>Customise your own Tumblr theme</p>
-						<button type="button" id="project-1" class="upvote" onclick="upvoteProject()">
+						<button type="button" id="project-2" class="upvote" onclick="upvoteProject(this)">
 							<span class="upvote__text">Upvote</span>
 							<svg class="icon-checkbox" width="30" height="30" viewBox="0 0 159 159" xmlns="http://www.w3.org/2000/svg"><g transform="translate(1 1)" stroke="black" stroke-width="15" fill="none" fill-rule="evenodd"><path class="check" d="M39 91l23 24 56-73"/></g></svg>
 						</button>
@@ -137,7 +137,7 @@
 					<li class="project-board__list-item">
 						<h3 class="project__number">3</h3>
 						<p>Make your own Snapchat filter</p>
-						<button type="button" class="upvote" onclick="upvoteProject()">
+						<button type="button"  id="project-3" class="upvote" onclick="upvoteProject(this)">
 							<span class="upvote__text">Upvote</span>
 							<svg class="icon-checkbox" width="30" height="30" viewBox="0 0 159 159" xmlns="http://www.w3.org/2000/svg"><g transform="translate(1 1)" stroke="black" stroke-width="15" fill="none" fill-rule="evenodd"><path class="check" d="M39 91l23 24 56-73"/></g></svg>
 						</button>
@@ -145,7 +145,7 @@
 					<li class="project-board__list-item">
 						<h3 class="project__number">4</h3>
 						<p>Build a weather app with Raspberry Pi</p>
-						<button type="button" class="upvote" onclick="upvoteProject()">
+						<button type="button" id="project-4" class="upvote" onclick="upvoteProject(this)">
 							<span class="upvote__text">Upvote</span>
 							<svg class="icon-checkbox" width="30" height="30" viewBox="0 0 159 159" xmlns="http://www.w3.org/2000/svg"><g transform="translate(1 1)" stroke="black" stroke-width="15" fill="none" fill-rule="evenodd"><path class="check" d="M39 91l23 24 56-73"/></g></svg>
 						</button>
@@ -153,7 +153,7 @@
 					<li class="project-board__list-item">
 						<h3 class="project__number">5</h3>
 						<p>Evolve Alexa - Build your own Alexa skills</p>
-						<button type="button" class="upvote" onclick="upvoteProject()">
+						<button type="button" id="project-5" class="upvote" onclick="upvoteProject(this)">
 							<span class="upvote__text">Upvote</span>
 							<svg class="icon-checkbox" width="30" height="30" viewBox="0 0 159 159" xmlns="http://www.w3.org/2000/svg"><g transform="translate(1 1)" stroke="black" stroke-width="15" fill="none" fill-rule="evenodd"><path class="check" d="M39 91l23 24 56-73"/></g></svg>
 						</button>
@@ -161,8 +161,9 @@
 					<li class="project-board__list-item">
 						<h3 class="project__number">6</h3>
 						<p>Make a Tetris game</p>
-						<button type="button" class="upvote" onclick="upvoteProject()">
-							
+						<button type="button"  id="project-6"class="upvote" onclick="upvoteProject(this)">
+							<span class="upvote__text">Upvote</span>
+							<svg class="icon-checkbox" width="30" height="30" viewBox="0 0 159 159" xmlns="http://www.w3.org/2000/svg"><g transform="translate(1 1)" stroke="black" stroke-width="15" fill="none" fill-rule="evenodd"><path class="check" d="M39 91l23 24 56-73"/></g></svg>
 						</button>
 					</li>
 				</ol>
@@ -180,21 +181,26 @@
 	
 		</div>
 		<script type="text/javascript">
-			var path = document.querySelector('.check'),
-			    length = path.getTotalLength();
 
-			path.style.strokeDasharray = length;
-			path.style.strokeDashoffset = length;
-
-			function upvoteProject(){
-				var button = document.querySelector('.upvote');
-				var buttonText = document.querySelector('.upvote__text');
-				var iconCheck = document.querySelector('.icon-checkbox');
-
-				button.classList.add('success');
-				buttonText.classList.add('hide');
-				iconCheck.classList.add('show');
+			//Animate our checkbox
+			var path = document.querySelectorAll('.check');
+			for(var i=0; i < path.length; i++){
+				var length = path[i].getTotalLength();
+				path[i].style.strokeDasharray = length;
+				path[i].style.strokeDashoffset = length;
 			}
+
+			//Hacky and quick way to get each button to select the span and svg
+			function upvoteProject(button){
+				button.classList.add('success');
+
+				for (var i = 0, childNode; i <= button.childNodes.length; i ++) {
+				    console.log(button.childNodes[i]);
+				    button.childNodes[1].classList.add('hide');
+				    button.childNodes[3].classList.add('show');
+				}
+			}
+
 		</script>
 	</body>
 </html>
