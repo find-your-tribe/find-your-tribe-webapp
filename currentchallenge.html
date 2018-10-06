@@ -5,10 +5,48 @@
 </head>
 
 <body>
-	<h1>OCTOBER CHALLENGE #01</h1>
-	<h2>Animate a Loading Icon</h2>
-	<p>Welcome to the chosen challenge for October! We'll be working together to create an animated loading icon using CSS.</p>
-	<form>
-		<input type="submit" value="Join this challenge!" id="join">
-	</form>	
+	<div class="wrapper">
+		<h1>OCTOBER CHALLENGE #01</h1>
+		<h2>Animate a Loading Icon</h2>
+		<p>Welcome to the chosen challenge for October! We'll be working together to create an animated loading icon using CSS.</p>
+		<form>
+			<button type="button"  id="project-6"class="button join" onclick="joinProject()">
+							<span class="challenge__text">Join!</span>
+							<svg class="icon-checkbox" width="30" height="30" viewBox="0 0 159 159" xmlns="http://www.w3.org/2000/svg"><g transform="translate(1 1)" stroke="black" stroke-width="15" fill="none" fill-rule="evenodd"><path class="check" d="M39 91l23 24 56-73"/></g></svg>
+			</button>
+		</form>	
+
+		<div class="section">
+				<h2>Location</h2>
+				<p>Sussex Innovation Centre</p>
+				<p>Science Park Square</p>
+				<p>Brighton BN1 9SB</p>
+		</div>
+
+		<div class="section">
+				<h2>Attendees</h2>
+				<ul>
+					<li>Name 1</li>
+					<li>Name 2</li>
+					<li>Name 3</li>
+					<li>Name 4</li>
+				</ul>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+			var path = document.querySelector('.check'),
+			    length = path.getTotalLength();
+ 			path.style.strokeDasharray = length;
+			path.style.strokeDashoffset = length;
+
+ 			function joinProject(){
+				var button = document.querySelector('.join');
+				var buttonText = document.querySelector('.challenge__text');
+				var iconCheck = document.querySelector('.icon-checkbox');
+ 				button.classList.add('success');
+				buttonText.classList.add('hide');
+				iconCheck.classList.add('show');
+			}
+		</script>
 </body>

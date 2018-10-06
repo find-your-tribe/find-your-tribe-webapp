@@ -2,118 +2,13 @@
 <html>
 	<head>
 		<title>Project Bank - Overview of project ideas</title>
-		<link href="https://fonts.googleapis.com/css?family=Niramit:400,700" rel="stylesheet">
-		<style>
-
-			body {
-				font-family: 'Niramit', sans-serif;
-				background-color: #b5f3ff;
-			}
-			.wrapper {
-				width: 90%;
-				max-width: 600px;
-				margin: 0 auto;
-				background-color: white;
-				padding: 20px;
-			}
-
-			.project-board__list {
-				margin: 0;
-				padding: 0;
-			}
-
-			.project-board__list-item {
-				padding: 20px 0;
-				border-bottom: 1px solid black;
-				display: flex;
-				flex-direction: row;
-				justify-content: space-between;
-				align-items: center;
-			}
-
-			.project-board__list-item p {
-				padding-left: 10px;
-				margin-right: auto;
-			}
-
-			.project__number {
-				width: 10px;
-				height: 10px;
-				background: #b5f3ff;
-				padding: 10px;
-				border-radius: 50%;
-				text-align: center;
-				display: flex;
-			    justify-content: center;
-			    align-items: center;
-			    font-size: 12px;
-			    font-weight: bold;
-			}
-
-			.upvote {
-				padding: 10px;
-				outline: 0;
-				border: none;
-				background: #b5f3ff;
-				font-weight: bold;
-				text-transform: uppercase;
-				cursor: pointer;
-				font-family: 'Niramit', sans-serif;
-				transition: .5s;
-				width: 100px;
-				height: 40px;
-			}
-
-			.upvote:hover,
-			.upvote:active {
-				transform: scale(1.1);
-			}
-
-			.section {
-				margin: 20px 0;
-				background: #f2f2f2;
-				padding: 20px;
-			}
-
-			.section h2 {
-				margin-top: 0;
-				padding: 0;
-			}
-
-			.icon-checkbox {
-				display: none;
-			}
-
-			.icon-checkbox.show {
-				display: block;
-				margin: -5px auto;
-			}
-
-			.show .check {
-				animation: dash .5s .2s ease-out forwards;
-			}
-
-			.hide {
-				display: none;
-			}
-
-			.success {
-				background: #8cffd8;
-			}
-
-			@keyframes dash {
-			  to {
-			    stroke-dashoffset: 0;
-			  }
-			}
-
-		</style>
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
 		<div class="wrapper">
 			<div class="top">
 				<h1>Project Bank</h1>
-				<p>This is the project bank where you can upvote an idea of what you would like to work on next month. Please upvote any ideas that you think sounds fun or interesting. You can also <a href="#add-project">submit your own ideas</a>.</p>
+				<p>This is the project bank where you can upvote an idea of what you would like to work on next month. Please upvote any ideas that you think sounds fun or interesting. You can also <a href="submit.html">submit your own ideas</a>.</p>
 			</div>
 
 			<div class="project-board">
@@ -121,7 +16,7 @@
 					<li class="project-board__list-item">
 						<h3 class="project__number">1</h3>
 						<p>Create a random GIF generator</p>
-						<button type="button" id="project-1" class="upvote" onclick="upvoteProject(this)">
+						<button type="button" id="project-1" class="button upvote" onclick="upvoteProject(this)">
 							<span class="upvote__text">Upvote</span>
 							<svg class="icon-checkbox" width="30" height="30" viewBox="0 0 159 159" xmlns="http://www.w3.org/2000/svg"><g transform="translate(1 1)" stroke="black" stroke-width="15" fill="none" fill-rule="evenodd"><path class="check" d="M39 91l23 24 56-73"/></g></svg>
 						</button>
@@ -129,7 +24,7 @@
 					<li class="project-board__list-item">
 						<h3 class="project__number">2</h3>
 						<p>Customise your own Tumblr theme</p>
-						<button type="button" id="project-2" class="upvote" onclick="upvoteProject(this)">
+						<button type="button" id="project-2" class="button upvote" onclick="upvoteProject(this)">
 							<span class="upvote__text">Upvote</span>
 							<svg class="icon-checkbox" width="30" height="30" viewBox="0 0 159 159" xmlns="http://www.w3.org/2000/svg"><g transform="translate(1 1)" stroke="black" stroke-width="15" fill="none" fill-rule="evenodd"><path class="check" d="M39 91l23 24 56-73"/></g></svg>
 						</button>
@@ -137,7 +32,7 @@
 					<li class="project-board__list-item">
 						<h3 class="project__number">3</h3>
 						<p>Make your own Snapchat filter</p>
-						<button type="button"  id="project-3" class="upvote" onclick="upvoteProject(this)">
+						<button type="button"  id="project-3" class="button upvote" onclick="upvoteProject(this)">
 							<span class="upvote__text">Upvote</span>
 							<svg class="icon-checkbox" width="30" height="30" viewBox="0 0 159 159" xmlns="http://www.w3.org/2000/svg"><g transform="translate(1 1)" stroke="black" stroke-width="15" fill="none" fill-rule="evenodd"><path class="check" d="M39 91l23 24 56-73"/></g></svg>
 						</button>
@@ -145,7 +40,7 @@
 					<li class="project-board__list-item">
 						<h3 class="project__number">4</h3>
 						<p>Build a weather app with Raspberry Pi</p>
-						<button type="button" id="project-4" class="upvote" onclick="upvoteProject(this)">
+						<button type="button" id="project-4" class="button upvote" onclick="upvoteProject(this)">
 							<span class="upvote__text">Upvote</span>
 							<svg class="icon-checkbox" width="30" height="30" viewBox="0 0 159 159" xmlns="http://www.w3.org/2000/svg"><g transform="translate(1 1)" stroke="black" stroke-width="15" fill="none" fill-rule="evenodd"><path class="check" d="M39 91l23 24 56-73"/></g></svg>
 						</button>
@@ -153,7 +48,7 @@
 					<li class="project-board__list-item">
 						<h3 class="project__number">5</h3>
 						<p>Evolve Alexa - Build your own Alexa skills</p>
-						<button type="button" id="project-5" class="upvote" onclick="upvoteProject(this)">
+						<button type="button" id="project-5" class="button upvote" onclick="upvoteProject(this)">
 							<span class="upvote__text">Upvote</span>
 							<svg class="icon-checkbox" width="30" height="30" viewBox="0 0 159 159" xmlns="http://www.w3.org/2000/svg"><g transform="translate(1 1)" stroke="black" stroke-width="15" fill="none" fill-rule="evenodd"><path class="check" d="M39 91l23 24 56-73"/></g></svg>
 						</button>
@@ -161,7 +56,7 @@
 					<li class="project-board__list-item">
 						<h3 class="project__number">6</h3>
 						<p>Make a Tetris game</p>
-						<button type="button"  id="project-6"class="upvote" onclick="upvoteProject(this)">
+						<button type="button"  id="project-6"class="button upvote" onclick="upvoteProject(this)">
 							<span class="upvote__text">Upvote</span>
 							<svg class="icon-checkbox" width="30" height="30" viewBox="0 0 159 159" xmlns="http://www.w3.org/2000/svg"><g transform="translate(1 1)" stroke="black" stroke-width="15" fill="none" fill-rule="evenodd"><path class="check" d="M39 91l23 24 56-73"/></g></svg>
 						</button>
@@ -171,12 +66,12 @@
 
 			<div class="section month-project">
 				<h2>This Month's project</h2>
-				<a href="#">View Project</a>
+				<a href="currentchallenge.html">View Project</a>
 			</div>
 
 			<div class="section add-project" id="add-project">
 				<h2>Submit your own project idea</h2>
-				<a href="#">Submit Project</a>
+				<a href="submit.html">Submit Project</a>
 			</div>
 	
 		</div>

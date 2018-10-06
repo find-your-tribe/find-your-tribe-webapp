@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Niramit:400,700');
 /*TYPOGRAPHY*/
 			body {
 				font-family: 'Niramit', sans-serif;
@@ -50,10 +51,12 @@
 				margin-top: 0;
 				padding: 0;
 			}
-			
 
 
-/*BUTTONS*/		.upvote {
+/*BUTTONS*/	
+			.button {
+				width: 100px;
+				height: 40px;
 				padding: 10px;
 				outline: 0;
 				border: none;
@@ -63,11 +66,10 @@
 				cursor: pointer;
 				font-family: 'Niramit', sans-serif;
 				transition: .5s;
-				width: 100px;
-				height: 40px;
 			}
-			.upvote:hover,
-			.upvote:active {
+
+			.button:hover,
+			.button:active {
 				transform: scale(1.1);
 			}
 
