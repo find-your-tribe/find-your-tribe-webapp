@@ -14,11 +14,12 @@ type MainAPI = ProjectAPI :<|> UserAPI :<|> Get '[JSON] TL.Text
 type ProjectAPI = "project" :> Capture "project-name" TL.Text :> Get '[JSON] ProjectDetails
 type UserAPI = "user" :>
                (
-                 "new" :> Post '[JSON] UserData
-                 :<|> "user" :> Capture "user-name" :> Get '[JSON]
+                 "new" :> Post '[JSON] ()
+                 :<|> Capture "user-name" TL.Text :> Get '[JSON] UserData
                )
 
 -- API implementations
+-- Proxy stuff
 mainAPI :: Proxy MainAPI
 mainAPI = Proxy
 
@@ -27,3 +28,11 @@ projectAPI = Proxy
 
 userAPI :: Proxy UserAPI
 userAPI = Proxy
+
+-- Server implementations
+userServer :: Server UserAPI
+userServer = newUser :<|> fetchUser
+  where newUser :: Handler ()
+        newUser = undefined
+        fetchUser :: TL.Text -> Handler UserData
+        fetchUser = undefined
