@@ -5,6 +5,12 @@
 				background-color: #b5f3ff;
 			}
 
+			textarea,
+			input,
+			button {
+				font-family: 'Niramit', sans-serif;
+			}
+
 /*PROJECT BOARD LAYOUT*/
 			.wrapper {
 				width: 90%;
@@ -64,7 +70,6 @@
 				font-weight: bold;
 				text-transform: uppercase;
 				cursor: pointer;
-				font-family: 'Niramit', sans-serif;
 				transition: .5s;
 			}
 
@@ -94,6 +99,9 @@
 			    stroke-dashoffset: 0;
 			  }
 			}
+			.submit-idea {
+				width: auto;
+			}
 
 /*FORMS*/
 textarea {
@@ -107,5 +115,7 @@ textarea {
    		 	border: none;
    		 	width: 90%;
    		 	height: 50vh;
+   		 	font-size:14px;
+   		 	margin-top:20px;
 }
 

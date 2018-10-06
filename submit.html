@@ -7,9 +7,28 @@
 <body>
 	<div class="wrapper">
 		<h1>Submit your own idea</h1>
-		<form>
+		<form id="myForm">
+			<label for="name">Idea Name:</label>
+			<input type="text" id="name" name="name" />
+
 			<textarea type="text" name="idea" id="ideatext">I want to make/learn</textarea>
-			<input type="submit" class="button" value="Submit Challenge Idea" id="submitidea">
+			<button type="submit" class="button submit-idea" id="submitidea">Submit</button>
 		</form>
 	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$('#submitidea').click( function() {
+		    $.ajax({
+		        url: 'localhost:8096',
+		        type: 'post',
+		        dataType: 'json',
+		        data: $('#myForm').serialize(),
+		        success: function(data) {
+                   console.log(data);
+                }
+		    });
+		});
+	
+	</script>
 </body>
