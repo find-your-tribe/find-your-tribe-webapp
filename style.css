@@ -1,0 +1,109 @@
+/*TYPOGRAPHY*/
+			body {
+				font-family: 'Niramit', sans-serif;
+				background-color: #b5f3ff;
+			}
+
+/*PROJECT BOARD LAYOUT*/
+			.wrapper {
+				width: 90%;
+				max-width: 600px;
+				margin: 0 auto;
+				background-color: white;
+				padding: 20px;
+			}
+			.project-board__list {
+				margin: 0;
+				padding: 0;
+			}
+			.project-board__list-item {
+				padding: 20px 0;
+				border-bottom: 1px solid black;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+			}
+			.project-board__list-item p {
+				padding-left: 10px;
+				margin-right: auto;
+			}
+			.project__number {
+				width: 10px;
+				height: 10px;
+				background: #b5f3ff;
+				padding: 10px;
+				border-radius: 50%;
+				text-align: center;
+				display: flex;
+			    justify-content: center;
+			    align-items: center;
+			    font-size: 12px;
+			    font-weight: bold;
+			}
+			.section {
+				margin: 20px 0;
+				background: #f2f2f2;
+				padding: 20px;
+			}
+			.section h2 {
+				margin-top: 0;
+				padding: 0;
+			}
+			
+
+
+/*BUTTONS*/		.upvote {
+				padding: 10px;
+				outline: 0;
+				border: none;
+				background: #b5f3ff;
+				font-weight: bold;
+				text-transform: uppercase;
+				cursor: pointer;
+				font-family: 'Niramit', sans-serif;
+				transition: .5s;
+				width: 100px;
+				height: 40px;
+			}
+			.upvote:hover,
+			.upvote:active {
+				transform: scale(1.1);
+			}
+
+			.icon-checkbox {
+				display: none;
+			}
+			.icon-checkbox.show {
+				display: block;
+				margin: -5px auto;
+			}
+			.show .check {
+				animation: dash .5s .2s ease-out forwards;
+			}
+			.hide {
+				display: none;
+			}
+			.success {
+				background: #8cffd8;
+			}
+			@keyframes dash {
+			  to {
+			    stroke-dashoffset: 0;
+			  }
+			}
+
+/*FORMS*/
+textarea {
+			background-attachment: local;
+    		background-image:
+		        linear-gradient(to right, white 10px, transparent 10px),
+		        linear-gradient(to left, white 10px, transparent 10px),
+		        repeating-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+    		line-height: 31px;
+   		 	padding: 8px 10px;
+   		 	border: none;
+   		 	width: 90%;
+   		 	height: 50vh;
+}
+
