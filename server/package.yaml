@@ -1,0 +1,23 @@
+name: find-your-tribe
+synopsis: SincHack .17% project
+category: Web
+license: MIT
+build-type: Simple
+
+dependencies:
+  - base
+
+  # Data
+  - text
+  - bytestring
+  - aeson
+
+  # Server
+  - servant
+  - servant-server
+
+executables:
+  server:
+    main: Main.hs
+    source-dirs: src
+    ghc-options: -O2 -Wall
